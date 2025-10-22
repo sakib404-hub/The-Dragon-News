@@ -15,7 +15,12 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/category/:id',
-                Component: CategoryNews
+                Component: CategoryNews,
+                loader: async () => {
+                    const res = await fetch('/news.json');
+                    if (!res.ok) throw new Error('Failed to load categories');
+                    return res.json();
+                }
             }
         ]
     }

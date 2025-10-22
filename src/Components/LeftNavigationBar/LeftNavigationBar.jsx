@@ -12,14 +12,15 @@ const LeftNavigationBar = () => {
         }
         fetchCategories();
     }, [])
-    console.log(categories);
+    // console.log(categories);
     return (
         <div className='p-2'>
             <h2 className='text-xl font-semibold'>All Categories({categories.length})</h2>
             <div className='grid grid-cols-1 gap-2 mt-5'>
                 {
                     categories.map((category) => {
-                        return <Categories category={category}></Categories>
+                        return <Categories category={category}
+                            key={category.id}></Categories>
                     })
                 }
             </div>
