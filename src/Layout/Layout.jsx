@@ -20,15 +20,15 @@ const Layout = () => {
             </header>
             <main className='min-h-screen border w-11/12 mx-auto
             grid grid-cols-12 gap-2 p-4 my-10'>
-                <aside className='col-span-3'>
+                <aside className='col-span-3 sticky top-0 h-fit'>
                     <Suspense fallback={<Loader></Loader>}>
                         <LeftNavigationBar></LeftNavigationBar>
                     </Suspense>
                 </aside>
-                <div className='col-span-6 border'>
+                <div className='col-span-6 border p-4'>
                     <Outlet></Outlet>
                 </div>
-                <aside className='col-span-3'>
+                <aside className='col-span-3 sticky top-0 h-screen overflow-y-auto'>
                     <RightNavigationBar></RightNavigationBar>
                 </aside>
             </main>

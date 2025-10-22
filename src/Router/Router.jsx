@@ -2,6 +2,9 @@ import { createBrowserRouter } from "react-router";
 import Layout from "../Layout/Layout";
 import Home from "../Components/Home/Home";
 import CategoryNews from "../Components/LeftNavigationBar/CategoryNews";
+import Login from "../Authentication/Login/Login";
+import Register from "../Authentication/Register/Register";
+import AuthLayout from "../Layout/AuthLayout";
 
 
 export const router = createBrowserRouter([
@@ -21,6 +24,20 @@ export const router = createBrowserRouter([
                     if (!res.ok) throw new Error('Failed to load categories');
                     return res.json();
                 }
+            }
+        ]
+    },
+    {
+        path: '/auth',
+        element: <AuthLayout></AuthLayout>,
+        children: [
+            {
+                index: true,
+                Component: Login
+            },
+            {
+                path: '/auth/register',
+                Component: Register
             }
         ]
     }
