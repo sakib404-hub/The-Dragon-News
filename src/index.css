@@ -26,3 +26,6 @@
   color: black;
   border-bottom: 2px solid black;
 }
+.nav-link2.active{
+  @apply bg-base-300
+}
