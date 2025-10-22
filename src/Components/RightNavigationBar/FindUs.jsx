@@ -23,7 +23,7 @@ const FindUs = () => {
                 </button>
 
                 {/* Instagram */}
-                <button className="flex items-center justify-start gap-3 w-full py-2 px-4 border border-gray-300 rounded-lg text-gray-700 font-medium transition-all duration-200 group hover:bg-gradient-to-r hover:from-pink-500 hover:to-yellow-400 hover:text-white">
+                <button className="flex items-center justify-start gap-3 w-full py-2 px-4 border border-gray-300 rounded-lg text-gray-700 font-medium transition-all duration-200 group hover:bg-gradient-from-r hover:from-pink-500 hover:to-yellow-400 hover:text-white">
                     <FaInstagram className="text-2xl text-pink-600 group-hover:text-white transition-all duration-200" />
                     <span>Instagram</span>
                 </button>
