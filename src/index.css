@@ -18,3 +18,11 @@
 *{
   font-family: "Poppins", sans-serif;
 }
+.nav-link:hover{
+  color: black;
+  border-bottom: 2px solid black ;
+}
+.nav-link.active {
+  color: black;
+  border-bottom: 2px solid black;
+}

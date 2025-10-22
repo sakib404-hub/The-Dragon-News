@@ -6,13 +6,13 @@ const Navbar = () => {
     return (
         <div className='w-11/12  mx-auto flex items-center justify-between p-2'>
             <div></div>
-            <div className='nav space-x-5'>
+            <div className='nav space-x-5 text-accent'>
                 <NavLink to={'/'}
-                    className={'font-semibold text-md'}>Home</NavLink>
-                <NavLink to={'/'}
-                    className={'font-semibold text-md'}>About</NavLink>
-                <NavLink to={'/'}
-                    className={'font-semibold text-md'}>Carrer</NavLink>
+                    className={'nav-link font-semibold text-md'}>Home</NavLink>
+                <NavLink to={'/about'}
+                    className={'nav-link font-semibold text-md'}>About</NavLink>
+                <NavLink to={'/carrer'}
+                    className={'nav-link font-semibold text-md'}>Carrer</NavLink>
             </div>
             <div className='flex items-center gap-2'>
                 <FaAddressCard className='text-3xl'></FaAddressCard>
