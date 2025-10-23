@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { AuthContext } from './AuthContext';
 import { auth } from '../Firebase/firebase.config.js'
-import { createUserWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
@@ -12,6 +12,10 @@ const AuthProvider = ({ children }) => {
 
     const logOut = () => {
         return signOut(auth);
+    }
+
+    const signInUser = (email, password) => {
+        return signInWithEmailAndPassword(auth, email, password)
     }
 
     //Setting up the Observer
@@ -29,7 +33,8 @@ const AuthProvider = ({ children }) => {
         user,
         setUser,
         createUser,
-        logOut
+        logOut,
+        signInUser
     }
     // console.log(user);
     return (

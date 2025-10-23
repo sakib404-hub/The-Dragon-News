@@ -101,6 +101,7 @@ const Register = () => {
                                     placeholder="Enter your email"
                                     id="email"
                                     name="email"
+                                    minLength={6}
                                     required
                                 />
                             </div>

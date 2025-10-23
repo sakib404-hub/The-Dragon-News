@@ -34,7 +34,12 @@ const Navbar = () => {
                             </span>
                         </div>
                     ) : (
-                        <span className="text-gray-500 text-sm">Guest</span>
+                        <div className='flex items-center gap-2'>
+                            <div className="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 border-2 border-primary">
+                                <FaUserCircle className="text-3xl text-primary" />
+                            </div>
+                            <span className="text-gray-500 text-sm">Guest</span>
+                        </div>
                     )
                 }
             </div>
