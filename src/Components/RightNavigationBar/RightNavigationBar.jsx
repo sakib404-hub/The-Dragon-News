@@ -5,7 +5,7 @@ import QZone from './QZone';
 
 const RightNavigationBar = () => {
     return (
-        <div className='p-2'>
+        <div className='p-2 space-y-5'>
             <SocialLogin></SocialLogin>
             <FindUs></FindUs>
             <QZone></QZone>

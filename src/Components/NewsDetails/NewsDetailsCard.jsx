@@ -2,9 +2,10 @@ import React from 'react';
 import { FaStar, FaEye, FaBookmark, FaShareAlt } from "react-icons/fa";
 import { Link } from 'react-router';
 
-const NewsCard = ({ news }) => {
+const NewsDetailsCard = ({ news }) => {
+    // console.log(news.author.img);
     return (
-        <div className="bg-white rounded-2xl shadow-md overflow-hidden max-w-xl mx-auto p-4" >
+        <div className="bg-white rounded-2xl shadow-md overflow-hidden max-w-5xl mx-auto p-4" >
             {/* Author Info */}
             <div className="flex items-center justify-between p-4">
                 <div className="flex items-center gap-3">
@@ -36,9 +37,7 @@ const NewsCard = ({ news }) => {
 
             {/* Details */}
             <p className="text-sm text-gray-600 px-4 mb-3">
-                {news.details.slice(0, 200)}...
-                <Link
-                    to={`/news-details/${news.id}`} className="text-blue-500 cursor-pointer"> Read More</Link>
+                {news.details}
             </p>
 
             {/* Tags */}
@@ -64,8 +63,12 @@ const NewsCard = ({ news }) => {
                     <span className="text-sm">{news.total_view}</span>
                 </div>
             </div>
+            <div>
+                <Link className='btn btn-secondary'
+                    to={`/category/${news.category_id}`}>Back to Category</Link>
+            </div>
         </div>
     );
 };
 
-export default NewsCard;
+export default NewsDetailsCard;
