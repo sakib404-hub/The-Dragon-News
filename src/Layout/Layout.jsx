@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { Outlet } from 'react-router';
+import { Outlet, useNavigation } from 'react-router';
 import Header from '../Components/Header/Header';
 import Footer from '../Components/Footer/Footer';
 import LatestNews from '../Components/LatestNews/LatestNews';
@@ -9,6 +9,7 @@ import RightNavigationBar from '../Components/RightNavigationBar/RightNavigation
 import Loader from '../Components/Loader/Loader';
 
 const Layout = () => {
+    const { state } = useNavigation();
     return (
         <div>
             <header className='my-10 flex space-y-6 flex-col'>
@@ -26,7 +27,9 @@ const Layout = () => {
                     </Suspense>
                 </aside>
                 <div className='col-span-6 p-4'>
-                    <Outlet></Outlet>
+                    {
+                        state == 'loading' ? <Loader></Loader> : <Outlet></Outlet>
+                    }
                 </div>
                 <aside className='col-span-3 sticky top-0 h-screen overflow-y-auto'>
                     <RightNavigationBar></RightNavigationBar>

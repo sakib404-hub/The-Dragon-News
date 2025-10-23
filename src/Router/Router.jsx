@@ -7,6 +7,7 @@ import Register from "../Authentication/Register/Register";
 import AuthLayout from "../Layout/AuthLayout";
 import NewsDetails from "../Components/NewsDetails/NewsDetails";
 import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
+import Loader from "../Components/Loader/Loader";
 
 
 export const router = createBrowserRouter([
@@ -25,7 +26,8 @@ export const router = createBrowserRouter([
                     const res = await fetch('/news.json');
                     if (!res.ok) throw new Error('Failed to load categories');
                     return res.json();
-                }
+                },
+                hydrateFallbackElement: <Loader></Loader>
             }
         ]
     },
@@ -48,6 +50,7 @@ export const router = createBrowserRouter([
         element: <PrivateRoute>
             <NewsDetails></NewsDetails>
         </PrivateRoute>,
-        loader: () => fetch('/news.json')
+        loader: () => fetch('/news.json'),
+        hydrateFallbackElement: <Loader></Loader>
     }
 ])
