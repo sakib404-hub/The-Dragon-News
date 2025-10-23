@@ -117,7 +117,6 @@ const Register = () => {
                                     required
                                 />
                             </div>
-
                             {/* Birthday */}
                             <div>
                                 <label htmlFor="birthday" className="label font-medium">Birthday</label>
