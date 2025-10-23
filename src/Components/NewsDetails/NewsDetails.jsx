@@ -9,8 +9,8 @@ const NewsDetails = () => {
     const data = useLoaderData();
     const [news, setNews] = useState(null);
 
-    console.log(data);
-    console.log(id);
+    // console.log(data);
+    // console.log(id);
 
     // const newsDetails = data.find(n => n.id.toString() === id.toString());
     // setNews(newsDetails)

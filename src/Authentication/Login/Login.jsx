@@ -1,9 +1,14 @@
-import React, { use } from 'react';
-import { Link } from 'react-router';
+import React, { use, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../../Provider/AuthContext';
 
 const Login = () => {
-    const { signInUser } = use(AuthContext)
+    const { signInUser } = use(AuthContext);
+    const [error, setError] = useState('');
+
+    const location = useLocation();
+    // console.log(location);
+    const path = useNavigate();
 
     const handleLoginButtonSumission = (event) => {
         event.preventDefault();
@@ -13,15 +18,19 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
 
-        console.log(email, password);
+        // console.log(email, password);
 
         signInUser(email, password)
             .then(() => {
                 alert('User Signed In SuccessFully!');
                 form.reset();
+                path(`${location.state ? location.state : '/'}`)
             })
             .catch((error) => {
-                alert(`${error.message}`)
+                // alert(`${error.message}`)
+                // const errorCode = error.code;
+                const errorMessage = error.message;
+                setError(errorMessage);
             })
 
 
@@ -73,6 +82,9 @@ const Login = () => {
                             </button>
                         </fieldset>
                     </form>
+                    {
+                        error && <p className='text-red-500 text-sm'>{error}</p>
+                    }
                     {/* If the user doesnt have an accout he can register  */}
                     <div className='text-center font-semibold'>
                         Don't Have an Account ? <Link

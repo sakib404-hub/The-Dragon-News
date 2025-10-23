@@ -27,7 +27,7 @@ const CategoryNews = () => {
     }, [data, id])
 
 
-    console.log(news);
+    // console.log(news);
     return (
         <div className='grid grid-cols-1 gap-6'>
             <h2 className='text-base font-semibold p-4'>
